@@ -1,0 +1,15 @@
+.display-none {
+    display: none;
+}
+
+.padding-horiz-130px {
+    padding: 0 130px;
+}
+
+.body {
+    margin: 0;
+}
+
+.text-block {
+    display: block;
+}

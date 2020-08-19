@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4980a025-d4b2-4750-b64a-abdfaf8bc5a3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="SCSS File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1gDoic5PcPeYf1FDEHkzJdrLrsT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="NewWatcherDialog.advanced.open" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\TestTaskHTC_2\images\site-logotypes" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4980a025-d4b2-4750-b64a-abdfaf8bc5a3" name="Default Changelist" comment="" />
+      <created>1597658654521</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597658654521</updated>
+      <workItem from="1597658656602" duration="17472000" />
+      <workItem from="1597751498309" duration="14968000" />
+      <workItem from="1597815250327" duration="3229000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="462" y="91" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1597670770478">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="462" y="91" key="#com.intellij.ide.macro.MacrosDialog/0.0.1366.728@0.0.1366.728" timestamp="1597670770478" />
+    <state x="350" y="46" width="665" height="682" key="EditFileWatcherDialog" timestamp="1597670804597">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="350" y="46" width="665" height="682" key="EditFileWatcherDialog/0.0.1366.728@0.0.1366.728" timestamp="1597670804597" />
+    <state x="462" y="141" key="FileChooserDialogImpl" timestamp="1597670797267">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="462" y="141" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1597670797266" />
+  </component>
+</project>

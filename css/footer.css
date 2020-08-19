@@ -1,0 +1,27 @@
+.footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+.footer_background {
+    background: #F2F2F2;
+}
+.footer_padding {
+    padding: 22px 130px 25px 130px;
+}
+
+.footer__img {
+    float: left;
+}
+.footer__img_margin_r {
+    margin-right: 40px;
+}
+
+.footer__text_padding {
+    padding-bottom: 6px;
+}
+.footer_contact_margin {
+    margin-bottom: 4px;
+}

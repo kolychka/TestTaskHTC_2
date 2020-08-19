@@ -1,0 +1,29 @@
+.font-default {
+    font-family: Rubik, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+
+    color: #333333;
+}
+
+.font_weight_medium {
+    font-weight: 500;
+}
+
+.font_size_s {
+    font-size: 20px;
+}
+.font_size_m {
+    font-size: 24px;
+}
+.font_size_l {
+    font-size: 28px;
+}
+
+.line-height_s {
+    line-height: 19px;
+}
+.line-height_m {
+    line-height: 33px;
+}
