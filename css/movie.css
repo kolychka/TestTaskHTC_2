@@ -1,0 +1,58 @@
+.movie {
+    display: flex;
+    justify-content: space-between;
+}
+.movie_margin_vert {
+    margin: 16px 0;
+}
+
+.movie__item {
+    width: 280px;
+    min-height: 434px;
+}
+
+.movie__img-container {
+    height: 370px;
+}
+.movie__img-container_margin_b {
+    margin-bottom: 16px;
+}
+
+.movie__img {
+    /*background: url("../images/posters/Mult v kino. Vypusk 103. Nekogda grustit.png");*/
+    max-width: inherit;
+    height: inherit;
+    -webkit-transition: width 2s, height 2s, background 2s, -webkit-transform 2s;
+    transition: width 2s, height 2s, background 2s, transform 2s;
+}
+.movie__img_border-radius {
+    border-radius: 8px;
+}
+.movie__img_margins {
+    margin-right: 20px;
+    margin-bottom: 16px;
+}
+.movie__img_margins_last-child {
+    margin-right: 0;
+}
+
+.movie__fade {
+    position: relative;
+    top: -370px;
+    max-width: inherit;
+    height: inherit;
+    background: #333333;
+    opacity: 0;
+    border-radius: 8px;
+}
+.movie__fade:hover {
+    opacity: 0.8;
+}
+.movie__fade_text {
+    color: #F2F2F2;
+    box-sizing: border-box;
+    padding: 16px;
+}
+
+.movie__annotation {}
+.movie__title_margin {}
