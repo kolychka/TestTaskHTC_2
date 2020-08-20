@@ -11,7 +11,8 @@
     margin-bottom: 32px;
 }
 
-.tabs__item_margin_r {
+.tabs_item {
+    color: #000;
     margin-right: 25px;
 }
 

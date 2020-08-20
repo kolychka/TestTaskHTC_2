@@ -1,22 +1,20 @@
-.footer-container {
-    position: fixed;
-    bottom: 0;
+.footer {
+    position: absolute;
     left: 0;
     right: 0;
+    bottom: 0;
+    overflow: hidden;
 }
-.footer-container_paddings {
-    padding-top: 22px;
-    padding-bottom: 25px;
+.footer_background {
+    background: #F2F2F2;
 }
-
-.footer {
-    width: 1180px;
+.footer_padding {
+    padding: 22px 130px 25px 130px;
 }
 
 .footer__img {
     float: left;
 }
-
 .footer__img_margin_r {
     margin-right: 40px;
 }

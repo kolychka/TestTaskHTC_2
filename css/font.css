@@ -1,5 +1,5 @@
 .font-default {
-    font-family: Rubik, Helvetica, sans-serif, emodji;
+    font-family: Rubik, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -21,14 +21,9 @@
     font-size: 28px;
 }
 
-.line-height_xs {
-    line-height: 24px;
-}
-
 .line-height_s {
-    line-height: 28px;
+    line-height: 19px;
 }
-
 .line-height_m {
     line-height: 33px;
 }
