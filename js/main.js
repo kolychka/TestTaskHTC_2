@@ -21,13 +21,20 @@ window.onload = function() {
         }
     });
 
-
     const newFilms = document.querySelector('.movie');
     NEW_FILMS_DATA.forEach(el => newFilms.innerHTML += newFilmsItem(el));
     newFilms.lastChild.classList.remove('movie__img_margins');
     newFilms.lastChild.classList.add('movie__img_margins_last-child');
 
-
-
-
+    const tvChannels = document.querySelector('.tv-channels');
+    TV_PROGRAMM_DATA.forEach(el => tvChannels.innerHTML += newTVChannelsItem(el));
+    const tvChannelsImgSection = document.getElementsByClassName('tv-channels__img-section');
+    for (let i = 0; i < tvChannelsImgSection.length; i++) {
+        tvChannelsImgSection[i].innerHTML = tvChannelsImg(TV_PROGRAMM_DATA[i].img);
+    }
+    const tvChannelsTVProgramm = document.querySelectorAll('.tv-channels__tv-programm');
+    tvChannelsTVProgramm.forEach((elem, i) => {
+            TV_PROGRAMM_DATA[i].programm.forEach(el => tvChannelsTVProgramm[i].innerHTML += tvChannelsTVProgrammItem(el));
+            tvChannelsTVProgramm[i].firstChild.classList.add('font_color_red');
+    });
 }

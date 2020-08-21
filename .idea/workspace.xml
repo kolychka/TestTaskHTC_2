@@ -79,6 +79,8 @@
       <workItem from="1597820453837" duration="30904000" />
       <workItem from="1597903435827" duration="25354000" />
       <workItem from="1597937336849" duration="927000" />
+      <workItem from="1597990394084" duration="15596000" />
+      <workItem from="1598027908590" duration="33000" />
     </task>
     <servers />
   </component>
@@ -107,6 +109,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="462" y="91" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1597670770478">

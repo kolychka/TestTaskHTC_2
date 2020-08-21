@@ -19,7 +19,6 @@
 }
 
 .movie__img {
-    /*background: url("../images/posters/Mult v kino. Vypusk 103. Nekogda grustit.png");*/
     max-width: inherit;
     height: inherit;
     -webkit-transition: width 2s, height 2s, background 2s, -webkit-transform 2s;

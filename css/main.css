@@ -6,14 +6,6 @@
     display: none;
 }
 
-.display_inherit {
-    display: inherit;
-}
-
-.margin-horiz-130px {
-    margin: 0 130px;
-}
-
 .body {
     margin: 0;
 }

@@ -7,6 +7,10 @@
     color: #333333;
 }
 
+.font_color_red {
+    color: #E5261E;
+}
+
 .font_weight_medium {
     font-weight: 500;
 }
