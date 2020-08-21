@@ -7,50 +7,124 @@
 
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/genres.css">
+    <link rel="stylesheet" href="css/movie.css">
+    <link rel="stylesheet" href="css/tv-channels.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/tabs.css">
-    <link rel="stylesheet" href="css/content-container.css">
 
     <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/data/films.js"></script>
+    <script src="js/data/tv-channels.js"></script>
+    <script src="js/layouts/films.js"></script>
+    <script src="js/layouts/tv-channels.js"></script>
+
+    <script src="js/main.js"></script>
 </head>
-<body class="font-default">
+<body class="font-default body">
     <main>
-        <header class="header header_size header_margins padding-horiz-130px">
-            <section>
-                <img src="images/site-logotypes/logo.png" alt="Видеосервис">
+        <section class="display_j-c_center">
+            <section class="header-container">
+                <header class="header header_size header_padding">
+                    <section>
+                        <img src="images/site-logotypes/logo.png" alt="Видеосервис">
+                    </section>
+                    <section>
+                        <label><input class="font-default search search_color search_text search_margins" type="text" placeholder="Поиск..."></label>
+                        <button class="font-default button-default button-text cursor_pointer">Найти</button>
+                    </section>
+                    <section>
+                        <label class="font_weight_medium display_none cursor_pointer">name</label> <!-- class = "text-block"-->
+                        <button class="font-default button-default button-text cursor_pointer display_none">Выйти</button>
+                        <button class="font-default button-default button cursor_pointer">Войти</button>
+                    </section>
+                </header>
             </section>
-            <section>
-                <label><input class="font-default search search_color search_text search_margins" type="text" placeholder="Поиск..."></label>
-                <button class="font-default button-default button-text">Найти</button>
-            </section>
-            <section>
-                <label class="font_weight_medium display-none">name</label> <!-- class = "text-block"-->
-                <button class="font-default button-default button-text display-none">Выйти</button>
-                <button class="font-default button-default button">Войти</button>
-            </section>
-        </header>
-        <section class="main__section padding-horiz-130px">
-            <header>
-                <nav>
-                    <ul class="tabs tabs_padding_l tabs_margin_vert font_weight_medium font_size_l line-height_m">
-                        <li class="tabs_item">Фильмы</li>
-                        <li class="tabs_item active">Телеканалы</li>
-                    </ul>
-                </nav>
-            </header>
-            <article></article>
         </section>
-        <footer class="footer footer_background footer_padding">
-            <img class="footer__img footer__img_margin_r" src="images/site-logotypes/htc-cs-logo.png" alt="Центр Высоких Технологий">
+        <section class="display_j-c_center main__section_margin">
             <section>
-                <section class="footer_contact_margin">
-                    <label class="text-block footer__text_padding">426057, Россия, Удмуртская Республика, г. Ижевск, ул. Карла Маркса, 246 (ДК «Металлург»)</label>
-                    <label class="text-block footer__text_padding">+7 (3412) 93-88-61, 43-29-29</label>
-                </section>
-                <a class="text-block font_weight_medium" href="https://htc-cs.ru/">htc-cs.ru</a>
+                <header>
+                    <nav>
+                        <ul class="tabs tabs_padding_l tabs_margin_vert font_weight_medium font_size_l line-height_m">
+                            <li id="films" data-content-item="films" class="tabs__item tabs__item_margin_r cursor_pointer">Фильмы</li>
+                            <li id="tv-channels" data-content-item="tv-channels" class="tabs__item tabs__item_margin_r cursor_pointer active">Телеканалы</li>
+                        </ul>
+                    </nav>
+                </header>
+                <article class="films data__item invisible">
+                    <section>
+                        <section class="name-category font_weight_medium font_size_m line-height_s">
+                            <img src="images/emoji/fire.png" alt="">
+                            <label>Новинки</label>
+                        </section>
+                        <section class="movie movie_margin_vert"></section>
+                    </section>
+                    <section>
+                        <section class="name-category font_weight_medium font_size_m line-height_s">
+                            <label>Жанры</label>
+                        </section>
+                        <section class="genres genres_margin_vert">
+                            <div class="genres__item genres__item_background_1 cursor_pointer">
+                                <img class="genres__img" src="images/emoji/comedy.png" alt="">
+                                <label class="genres__title font_size_s line-height_xs">Комедии</label>
+                            </div>
+                            <div class="genres__item genres__item_background_2 cursor_pointer">
+                                <img class="genres__img" src="images/emoji/dramas.png" alt="">
+                                <label class="genres__title font_size_s line-height_xs">Драмы</label>
+                            </div>
+                            <div class="genres__item genres__item_background_3 cursor_pointer">
+                                <img class="genres__img" src="images/emoji/fantastic.png" alt="">
+                                <label class="genres__title font_size_s line-height_xs">Фантастика</label>
+                            </div>
+                            <div class="genres__item genres__item_background_4 cursor_pointer">
+                                <img class="genres__img" src="images/emoji/horrors.png" alt="">
+                                <label class="genres__title font_size_s line-height_xs">Ужасы</label>
+                            </div>
+                        </section>
+                    </section>
+                </article>
+                <article class="tv-channels data__item visible">
+                    <section class="tv-channels__item tv-channels__item_margins background_gray">
+                        <section class="tv-channels__img-section">
+                            <img src="images/channels-logotypes/1st.png" alt="">
+                        </section>
+                        <section class="tv-channels__text_paddings">
+                            <label class="text-block tv-channels__title_paddings font_weight_medium font_size_s line-height_xs">Первый канал</label>
+                            <section class="tv-channels__tv-programm">
+                                <section class="tv-channels__tv-programm_margin_b">
+                                    <label class="tv-channels__tv-programm_time">13:00</label>
+                                    <label class="tv-channels__tv-programm_title">Новости (с субтитрами)</label>
+                                </section>
+                                <section class="tv-channels__tv-programm_margin_b">
+                                    <label class="tv-channels__tv-programm_time">13:00</label>
+                                    <label class="tv-channels__tv-programm_title">Новости (с субтитрами)</label>
+                                </section>
+                                <section class="tv-channels__tv-programm_margin_b">
+                                    <label class="tv-channels__tv-programm_time">13:00</label>
+                                    <label class="tv-channels__tv-programm_title">Новости (с субтитрами)</label>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </article>
             </section>
-        </footer>
+        </section>
+        <section class="footer-container footer-container_paddings background_gray">
+            <section class="display_j-c_center">
+                <footer class="footer footer_size footer_background footer_padding">
+                    <img class="footer__img footer__img_margin_r" src="images/site-logotypes/htc-cs-logo.png" alt="Центр Высоких Технологий">
+                    <section>
+                        <section class="footer_contact_margin">
+                            <label class="text-block footer__text_padding">426057, Россия, Удмуртская Республика, г. Ижевск, ул. Карла Маркса, 246 (ДК «Металлург»)</label>
+                            <label class="text-block footer__text_padding">+7 (3412) 93-88-61, 43-29-29</label>
+                        </section>
+                        <a class="text-block font_weight_medium" href="https://htc-cs.ru/">htc-cs.ru</a>
+                    </section>
+                </footer>
+            </section>
+        </section>
     </main>
 </body>
 </html>

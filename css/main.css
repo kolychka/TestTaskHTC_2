@@ -1,9 +1,17 @@
-.display-none {
+.main__section_margin {
+    margin-top: 44px;
+}
+
+.display_none {
     display: none;
 }
 
-.padding-horiz-130px {
-    padding: 0 130px;
+.display_inherit {
+    display: inherit;
+}
+
+.margin-horiz-130px {
+    margin: 0 130px;
 }
 
 .body {
@@ -12,4 +20,25 @@
 
 .text-block {
     display: block;
+}
+
+.invisible{
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.cursor_pointer {
+    cursor: pointer;
+}
+
+.display_j-c_center {
+    display: flex;
+    justify-content: center;
+}
+
+.background_gray {
+    background: #F2F2F2;
 }
