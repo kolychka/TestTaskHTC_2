@@ -19,10 +19,6 @@
     width: 320px;
     height: 25px;
     font-weight: 500;
-    outline: none;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid #333333;
 }
 .search_margins {
     margin-right: 32px;

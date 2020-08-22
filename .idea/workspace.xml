@@ -46,6 +46,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1gDoic5PcPeYf1FDEHkzJdrLrsT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -59,6 +60,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -81,6 +83,8 @@
       <workItem from="1597937336849" duration="927000" />
       <workItem from="1597990394084" duration="15596000" />
       <workItem from="1598027908590" duration="33000" />
+      <workItem from="1598028250369" duration="615000" />
+      <workItem from="1598074732906" duration="19761000" />
     </task>
     <servers />
   </component>
@@ -111,6 +115,11 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
   <component name="WindowStateProjectService">
     <state x="462" y="91" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1597670770478">
       <screen x="0" y="0" width="1366" height="728" />
@@ -124,10 +133,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="462" y="141" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1597937633577" />
+    <state x="184" y="0" key="SettingsEditor" timestamp="1598074761228">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1598074761228" />
     <state x="475" y="264" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1597937740708">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="475" y="264" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1366.728@0.0.1366.728" timestamp="1597937740708" />
+    <state x="339" y="157" key="run.anything.popup" timestamp="1598081804469">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="157" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1598081804469" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1597917517724">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

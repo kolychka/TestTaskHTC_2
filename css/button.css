@@ -11,6 +11,9 @@
     color: #E5261E;
     background: none;
 }
+.button-text:hover {
+    color: #CC221B;
+}
 
 .button {
     background: #E5261E;

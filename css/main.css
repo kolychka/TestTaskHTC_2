@@ -2,10 +2,6 @@
     margin-top: 44px;
 }
 
-.display_none {
-    display: none;
-}
-
 .body {
     margin: 0;
 }
@@ -14,7 +10,7 @@
     display: block;
 }
 
-.invisible{
+.invisible {
     display: none;
 }
 
@@ -33,4 +29,15 @@
 
 .background_gray {
     background: #F2F2F2;
+}
+
+.fade {
+    background: #333333;
+}
+
+.input_line-bottom {
+    outline: none;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #333333;
 }

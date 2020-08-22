@@ -7,9 +7,11 @@
 
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/checkbox.css">
     <link rel="stylesheet" href="css/genres.css">
     <link rel="stylesheet" href="css/movie.css">
     <link rel="stylesheet" href="css/tv-channels.css">
+    <link rel="stylesheet" href="css/authorization.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/tabs.css">
@@ -18,8 +20,11 @@
 
     <script src="js/data/films.js"></script>
     <script src="js/data/tv-channels.js"></script>
+    <script src="js/data/authorization.js"></script>
+
     <script src="js/layouts/films.js"></script>
     <script src="js/layouts/tv-channels.js"></script>
+    <script src="js/layouts/authorization.js"></script>
 
     <script src="js/main.js"></script>
 </head>
@@ -32,13 +37,26 @@
                         <img src="images/site-logotypes/logo.png" alt="Видеосервис">
                     </section>
                     <section>
-                        <label><input class="font-default search search_color search_text search_margins" type="text" placeholder="Поиск..."></label>
+                        <label><input class="font-default search search_color search_margins input_line-bottom" type="text" placeholder="Поиск..."></label>
                         <button class="font-default button-default button-text cursor_pointer">Найти</button>
                     </section>
-                    <section>
-                        <label class="font_weight_medium display_none cursor_pointer">name</label> <!-- class = "text-block"-->
+                    <section class="authorization">
+                        <!--<div class="fade authorization__fade"></div>
+                        <form class="authorization__form">
+                            <label class="font_weight_medium text-block font_size_m line-height_m authorization__elem_margin_b authorization__label">Вход</label>
+                            <section class="authorization__inputs">
+                                <label>
+                                    <input type="text" class="font-default text-block authorization__input-login-password input_line-bottom authorization__elem_margin_b" placeholder="Логин">
+                                    <input type="text" class="font-default text-block authorization__input-login-password input_line-bottom authorization__elem_margin_b" placeholder="Пароль">
+                                </label>
+                                <input id="checkbox-remember" type="checkbox" class="checkbox checkbox_margins authorization__elem_margin_b ">
+                                <label for="checkbox-remember" class="font-default text-block authorization__elem_margin_b authorization__elem_margin_l">Запомнить</label>
+                            </section>
+                            <button class="font-default button-default button cursor_pointer authorization__button">Войти</button>
+                        </form>-->
+                        <!--<label class="font_weight_medium display_none cursor_pointer">name</label> &lt;!&ndash; class = "text-block"&ndash;&gt;
                         <button class="font-default button-default button-text cursor_pointer display_none">Выйти</button>
-                        <button class="font-default button-default button cursor_pointer">Войти</button>
+                        <button class="font-default button-default button cursor_pointer">Войти</button>-->
                     </section>
                 </header>
             </section>
