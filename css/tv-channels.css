@@ -15,13 +15,11 @@
     height: 696px;
 }
 .tv-channels::-webkit-scrollbar {
-    /* 1 - скроллбар */
     background: #F2F2F2;
     width: 8px;
     border-radius: 2px;
 }
 .tv-channels::-webkit-scrollbar-thumb {
-    /* 5 - ползунок */
     background: #BDBDBD;
     border-radius: 2px;
 }

@@ -39,35 +39,34 @@ window.onload = function() {
         tvChannelsTVProgramm[i].firstChild.classList.add('font_color_red');
     });
 
-    const authorization = document.querySelector('.authorization');
-    /* НЕАВТОРИЗОВАННЫЙ ХЕДЕР */
-    authorization.innerHTML += unauthorizedHeader();
-    /* АВТОРИЗОВАННЫЙ ХЕДЕР */
-    /*const name = USERNAME.surname !== '' ? USERNAME.name + ' ' + USERNAME.surname[0] + '.' : USERNAME.name;
-    authorization.innerHTML += authorizedHeader(name);*/
-
-    const openTheFormSignIn = document.querySelector('#open-the-form-sign-in');
+    const authorizationFadeContainer = document.querySelector('.authorization__fade-container');
+    const authorHeader = document.querySelector('.authorized-header');
+    const authorHeaderUsername = document.querySelector('.header__username');
+    const unauthorHeader = document.querySelector('.unauthorized-header');
     const name = USERNAME.surname !== '' ? USERNAME.name + ' ' + USERNAME.surname[0] + '.' : USERNAME.name;
-    openTheFormSignIn.onclick = event => {
+
+    function signInOnclickHandler(event) {
         event.preventDefault();
-        authorization.innerHTML += popupWindow();
-        const signIn = document.querySelector('#sign-in');
-        signIn.onclick = event => {
-            event.preventDefault();
-            while (authorization.firstChild) {
-                authorization.removeChild(authorization.firstChild);
-            }
-            authorization.innerHTML += authorizedHeader(name);
-            const signOut = document.querySelector('#sign-out');
-            signOut.onclick = event => {
-                event.preventDefault();
-                while (authorization.firstChild) {
-                    authorization.removeChild(authorization.firstChild);
-                }
-                authorization.innerHTML += unauthorizedHeader();
-            }
-        }
+        authorHeader.classList.remove('display_none');
+        unauthorHeader.classList.add('display_none');
+        authorizationFadeContainer.classList.add('display_none');
+
+        authorHeaderUsername.innerHTML = name;
+        const signOut = document.querySelector('#sign-out');
+        signOut.onclick = signOutOnclickHandler;
     }
 
+    function signOutOnclickHandler() {
+        unauthorHeader.classList.remove('display_none');
+        authorHeader.classList.add('display_none');
+    }
 
+    function openTheFormSignInHandler() {
+        authorizationFadeContainer.classList.remove('display_none');
+        authorizationFadeContainer.innerHTML = popupWindow();
+        const signIn = document.querySelector('#sign-in');
+        signIn.onclick = signInOnclickHandler;
+    }
+    const openTheFormSignIn = document.querySelector('#open-the-form-sign-in');
+    openTheFormSignIn.onclick = openTheFormSignInHandler;
 }
