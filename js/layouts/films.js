@@ -5,7 +5,5 @@ const newFilmsItem = el => `<section class="movie__item movie__img_margins">
                                     </div>
                                     <div class="fade movie__fade movie__fade_text">${el.annotation}</div>
                                 </div>
-                                <label class="movie__title_margin font_size_s line-height_xs">${el.title}</label>
+                                <label class="font_size_s line-height_xs">${el.title}</label>
                             </section>`;
-
-const movieImg = () => `<div class="movie__img"></div>`;

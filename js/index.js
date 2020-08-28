@@ -43,15 +43,22 @@ window.onload = function() {
     const authorHeader = document.querySelector('.authorized-header');
     const authorHeaderUsername = document.querySelector('.header__username');
     const unauthorHeader = document.querySelector('.unauthorized-header');
-    const name = USERNAME.surname !== '' ? USERNAME.name + ' ' + USERNAME.surname[0] + '.' : USERNAME.name;
+    const username = USERNAME.surname !== '' ? USERNAME.name + ' ' + USERNAME.surname[0] + '.' : USERNAME.name;
 
     function signInOnclickHandler(event) {
         event.preventDefault();
         authorHeader.classList.remove('display_none');
         unauthorHeader.classList.add('display_none');
         authorizationFadeContainer.classList.add('display_none');
-
-        authorHeaderUsername.innerHTML = name;
+        authorHeaderUsername.innerHTML = username;
+        if (authorHeaderUsername) {
+            authorHeaderUsername.addEventListener('focusout', function() {
+                localStorage.setItem('username', this.innerHTML);
+            });
+            if (localStorage.getItem('username')) {
+                authorHeaderUsername.innerHTML = localStorage.getItem('username');
+            }
+        }
         const signOut = document.querySelector('#sign-out');
         signOut.onclick = signOutOnclickHandler;
     }
