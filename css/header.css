@@ -29,4 +29,7 @@
 .search_color::-ms-input-placeholder { color: #828282; font-weight: 400; }
 .search_color::placeholder { color: #828282; font-weight: 400; }
 
-
+.authorized-header {
+    height: inherit;
+    overflow: hidden;
+}

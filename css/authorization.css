@@ -2,7 +2,7 @@
     margin-bottom: 24px;
 }
 
-.authorization__fade-container {
+.authorization__fade {
     display: block;
     position: fixed;
     width: 100%;
@@ -10,7 +10,7 @@
     background-color: rgba(51,51,51, 0.6);
     z-index: 1;
 }
-.authorization__fade-container .body{
+.authorization__fade .body{
     position: relative;
     left: calc((100% - 304px)/2);
     top: calc((100% - 394px)/2);

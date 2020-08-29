@@ -1,6 +1,5 @@
 const newTVChannelsItem = el => `<section class="tv-channels__item tv-channels__item_margins background_gray">
-                        <section class="tv-channels__img-section">
-                        </section>
+                        <section class="tv-channels__img-section"></section>
                         <section class="tv-channels__text_paddings">
                             <label class="text-block tv-channels__title_paddings font_weight_medium font_size_s line-height_xs">${el.title}</label>
                             <section class="tv-channels__tv-programm"></section>

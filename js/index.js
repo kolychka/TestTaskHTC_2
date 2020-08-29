@@ -28,32 +28,46 @@ window.onload = function() {
 
     const tvChannels = document.querySelector('.tv-channels');
     TV_PROGRAMM_DATA.forEach(el => tvChannels.innerHTML += newTVChannelsItem(el));
-    /* добавить проверику на наличие элемента */
     const tvChannelsImgSection = document.querySelectorAll('.tv-channels__img-section');
     tvChannelsImgSection.forEach((elem, i) =>
         tvChannelsImgSection[i].innerHTML = tvChannelsImg(TV_PROGRAMM_DATA[i].img));
-    /* добавить проверику на наличие элемента */
     const tvChannelsTVProgramm = document.querySelectorAll('.tv-channels__tv-programm');
     tvChannelsTVProgramm.forEach((elem, i) => {
         TV_PROGRAMM_DATA[i].programm.forEach(el => tvChannelsTVProgramm[i].innerHTML += tvChannelsTVProgrammItem(el));
         tvChannelsTVProgramm[i].firstChild.classList.add('font_color_red');
     });
 
-    const authorizationFadeContainer = document.querySelector('.authorization__fade-container');
+    const authorizationFade = document.querySelector('.authorization__fade');
     const authorHeader = document.querySelector('.authorized-header');
     const authorHeaderUsername = document.querySelector('.header__username');
     const unauthorHeader = document.querySelector('.unauthorized-header');
     const username = USERNAME.surname !== '' ? USERNAME.name + ' ' + USERNAME.surname[0] + '.' : USERNAME.name;
+    const reg = '^[^\s]*/';
+
+
+/*    let authorizationFormLogin = document.querySelector('#login');
+    let authorizationFormPassword = document.querySelector('#password');
+    signIn.onclick = event => {
+        event.preventDefault();
+        if (authorizationFormLogin.value.length !== 0 && authorizationFormPassword.value.length !== 0) {
+            /!* вот тут авторизация*!/
+            authorizationFormLogin.value = "";
+            authorizationFormPassword.value = "";
+        }
+    }*/
+
 
     function signInOnclickHandler(event) {
         event.preventDefault();
         authorHeader.classList.remove('display_none');
         unauthorHeader.classList.add('display_none');
-        authorizationFadeContainer.classList.add('display_none');
+        authorizationFade.classList.add('display_none');
         authorHeaderUsername.innerHTML = username;
         if (authorHeaderUsername) {
             authorHeaderUsername.addEventListener('focusout', function() {
-                localStorage.setItem('username', this.innerHTML);
+                if (this.innerHTML.replace(reg, '')) {
+                    localStorage.setItem('username', this.innerHTML);
+                }
             });
             if (localStorage.getItem('username')) {
                 authorHeaderUsername.innerHTML = localStorage.getItem('username');
@@ -69,8 +83,13 @@ window.onload = function() {
     }
 
     function openTheFormSignInHandler() {
-        authorizationFadeContainer.classList.remove('display_none');
-        authorizationFadeContainer.innerHTML = popupWindow();
+        authorizationFade.classList.remove('display_none');
+        authorizationFade.innerHTML = popupWindow();
+
+        authorizationFade.onclick = () => { authorizationFade.classList.add('display_none'); }
+        const authorizationForm = document.querySelector('.authorization__form');
+        authorizationForm.onclick = event => event.stopPropagation();
+
         const signIn = document.querySelector('#sign-in');
         signIn.onclick = signInOnclickHandler;
     }
