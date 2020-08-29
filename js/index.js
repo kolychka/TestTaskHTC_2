@@ -37,44 +37,44 @@ window.onload = function() {
         tvChannelsTVProgramm[i].firstChild.classList.add('font_color_red');
     });
 
+    const openTheFormSignIn = document.querySelector('#open-the-form-sign-in');
     const authorizationFade = document.querySelector('.authorization__fade');
-    const authorHeader = document.querySelector('.authorized-header');
-    const authorHeaderUsername = document.querySelector('.header__username');
     const unauthorHeader = document.querySelector('.unauthorized-header');
-    const username = USERNAME.surname !== '' ? USERNAME.name + ' ' + USERNAME.surname[0] + '.' : USERNAME.name;
-    const reg = '^[^\s]*/';
+    const authorHeader = document.querySelector('.authorized-header');
+    const headerUsername = document.querySelector('.header__username');
+    const username = USERNAME.surname ? `${USERNAME.name} ${USERNAME.surname.charAt(0)}.` : USERNAME.name;
 
-
-/*    let authorizationFormLogin = document.querySelector('#login');
-    let authorizationFormPassword = document.querySelector('#password');
-    signIn.onclick = event => {
-        event.preventDefault();
-        if (authorizationFormLogin.value.length !== 0 && authorizationFormPassword.value.length !== 0) {
-            /!* вот тут авторизация*!/
-            authorizationFormLogin.value = "";
-            authorizationFormPassword.value = "";
+    function headerUsernameOnFocusoutHandler() {
+        if (this.innerHTML.replace('^[^\s]*/', '')) {
+            localStorage.setItem('username', this.innerHTML);
         }
-    }*/
-
+    }
 
     function signInOnclickHandler(event) {
         event.preventDefault();
-        authorHeader.classList.remove('display_none');
-        unauthorHeader.classList.add('display_none');
-        authorizationFade.classList.add('display_none');
-        authorHeaderUsername.innerHTML = username;
-        if (authorHeaderUsername) {
-            authorHeaderUsername.addEventListener('focusout', function() {
-                if (this.innerHTML.replace(reg, '')) {
-                    localStorage.setItem('username', this.innerHTML);
+        const formError = document.querySelector('.authorization__form_error');
+        const login = document.getElementById('login').value;
+        const password = document.getElementById('password').value;
+
+        if (login && password
+            && login.length >= 3 && login.length <= 16
+            && password.match('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})')
+        ) {
+            const signOut = document.querySelector('#sign-out');
+            authorHeader.classList.remove('display_none');
+            unauthorHeader.classList.add('display_none');
+            authorizationFade.classList.add('display_none');
+            headerUsername.innerHTML = username;
+            if (headerUsername) {
+                if (localStorage.getItem('username')) {
+                    headerUsername.innerHTML = localStorage.getItem('username');
                 }
-            });
-            if (localStorage.getItem('username')) {
-                authorHeaderUsername.innerHTML = localStorage.getItem('username');
             }
+            signOut.onclick = signOutOnclickHandler;
+        } else {
+            formError.classList.remove('display_none');
+            setTimeout(() => { formError.classList.add('display_none'); }, 6000);
         }
-        const signOut = document.querySelector('#sign-out');
-        signOut.onclick = signOutOnclickHandler;
     }
 
     function signOutOnclickHandler() {
@@ -83,16 +83,17 @@ window.onload = function() {
     }
 
     function openTheFormSignInHandler() {
-        authorizationFade.classList.remove('display_none');
         authorizationFade.innerHTML = popupWindow();
+        authorizationFade.classList.remove('display_none');
 
-        authorizationFade.onclick = () => { authorizationFade.classList.add('display_none'); }
         const authorizationForm = document.querySelector('.authorization__form');
-        authorizationForm.onclick = event => event.stopPropagation();
-
         const signIn = document.querySelector('#sign-in');
+
+        authorizationFade.onclick = () => authorizationFade.classList.add('display_none');
+        authorizationForm.onclick = event => event.stopPropagation();
         signIn.onclick = signInOnclickHandler;
     }
-    const openTheFormSignIn = document.querySelector('#open-the-form-sign-in');
+
     openTheFormSignIn.onclick = openTheFormSignInHandler;
+    headerUsername.addEventListener('focusout', headerUsernameOnFocusoutHandler);
 }
