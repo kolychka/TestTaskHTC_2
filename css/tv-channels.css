@@ -9,19 +9,20 @@
     margin-bottom: 16px;
     margin-right: 8px;
 }
+.tv-channels .tv-channels__item_margins:last-of-type {
+    margin-bottom: 0;
+}
 
 .tv-channels {
     overflow-y: scroll;
     height: 696px;
 }
 .tv-channels::-webkit-scrollbar {
-    /* 1 - скроллбар */
     background: #F2F2F2;
     width: 8px;
     border-radius: 2px;
 }
 .tv-channels::-webkit-scrollbar-thumb {
-    /* 5 - ползунок */
     background: #BDBDBD;
     border-radius: 2px;
 }
