@@ -21,7 +21,7 @@ window.onload = function() {
         }
     });
 
-    const newFilms = document.querySelector('.movie');
+/*    const newFilms = document.querySelector('.movie');
     NEW_FILMS_DATA.forEach(el => newFilms.innerHTML += newFilmsItem(el));
     newFilms.lastChild.classList.remove('movie__img_margins');
     newFilms.lastChild.classList.add('movie__img_margins_last-child');
@@ -36,6 +36,13 @@ window.onload = function() {
         TV_PROGRAMM_DATA[i].programm.forEach(el => tvChannelsTVProgramm[i].innerHTML += tvChannelsTVProgrammItem(el));
         tvChannelsTVProgramm[i].firstChild.classList.add('font_color_red');
     });
+*/
+
+    const films = new Films();
+    films.createFilms();
+
+    const tvProgramm = new TVChannels();
+    tvProgramm.createTVProgramm();
 
     const openTheFormSignIn = document.querySelector('#open-the-form-sign-in');
     const authorizationFade = document.querySelector('.authorization__fade');
@@ -96,4 +103,8 @@ window.onload = function() {
 
     openTheFormSignIn.onclick = openTheFormSignInHandler;
     headerUsername.addEventListener('focusout', headerUsernameOnFocusoutHandler);
+
+/*    const auth = Authorization(openTheFormSignIn, authorizationFade, unauthorHeader, authorHeader, headerUsername, username);
+    openTheFormSignIn.onclick = auth.openTheFormSignInHandler;
+    headerUsername.addEventListener('focusout', auth.headerUsernameOnFocusoutHandler);*/
 }
