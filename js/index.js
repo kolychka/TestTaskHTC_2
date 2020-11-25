@@ -27,7 +27,7 @@ window.onload = function() {
     const tvProgramm = new TVChannels();
     tvProgramm.createTVProgramm();
 
-/*    const openTheFormSignIn = document.querySelector('#open-the-form-sign-in');
+    const openTheFormSignIn = document.querySelector('#open-the-form-sign-in');
     const authorizationFade = document.querySelector('.authorization__fade');
     const unauthorHeader = document.querySelector('.unauthorized-header');
     const authorHeader = document.querySelector('.authorized-header');
@@ -35,7 +35,7 @@ window.onload = function() {
     const username = USERNAME.surname ? `${USERNAME.name} ${USERNAME.surname.charAt(0)}.` : USERNAME.name;
 
     function headerUsernameOnFocusoutHandler() {
-        if (this.innerHTML.replace('^[^\s]*!/', '')) {
+        if (this.innerHTML.replace('^[^\s]*/', '')) {
             localStorage.setItem('username', this.innerHTML);
         }
     }
@@ -46,7 +46,7 @@ window.onload = function() {
         const login = document.getElementById('login').value;
         const password = document.getElementById('password').value;
 
-        /!*password.match('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})')*!/ // для полной проверки пароля
+        /*password.match('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})')*/ // для полной проверки пароля
         if (login && password
             && login.length >= 3 && login.length <= 16
             && password.length >= 5 && password.length <= 20
@@ -86,5 +86,5 @@ window.onload = function() {
     }
 
     openTheFormSignIn.addEventListener('click', openTheFormSignInHandler);
-    headerUsername.addEventListener('focusout', headerUsernameOnFocusoutHandler);*/
+    headerUsername.addEventListener('focusout', headerUsernameOnFocusoutHandler);
 }
