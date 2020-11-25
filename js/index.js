@@ -8,35 +8,18 @@ window.onload = function() {
     const tabsItems = document.querySelectorAll(TABS_ITEM_SELECTOR);
     const dataItems = document.querySelectorAll(DATA_ITEM_SELECTOR);
     tabsItems.forEach(item => {
-        item.onclick = function () {
+        item.addEventListener('click', function () {
             tabsItems.forEach(elem => elem.classList.remove(ACTIVE_CLASS));
             this.classList.add(ACTIVE_CLASS);
             dataItems.forEach(elem => {
-               elem.classList.remove(VISIBLE_CLASS);
-               elem.classList.add(INVISIBLE_CLASS);
+                elem.classList.remove(VISIBLE_CLASS);
+                elem.classList.add(INVISIBLE_CLASS);
             });
             const it = document.querySelector(`.${this.dataset.contentItem}`);
             it.classList.add(VISIBLE_CLASS);
             it.classList.remove(INVISIBLE_CLASS);
-        }
+        });
     });
-
-/*    const newFilms = document.querySelector('.movie');
-    NEW_FILMS_DATA.forEach(el => newFilms.innerHTML += newFilmsItem(el));
-    newFilms.lastChild.classList.remove('movie__img_margins');
-    newFilms.lastChild.classList.add('movie__img_margins_last-child');
-
-    const tvChannels = document.querySelector('.tv-channels');
-    TV_PROGRAMM_DATA.forEach(el => tvChannels.innerHTML += newTVChannelsItem(el));
-    const tvChannelsImgSection = document.querySelectorAll('.tv-channels__img-section');
-    tvChannelsImgSection.forEach((elem, i) =>
-        tvChannelsImgSection[i].innerHTML = tvChannelsImg(TV_PROGRAMM_DATA[i].img));
-    const tvChannelsTVProgramm = document.querySelectorAll('.tv-channels__tv-programm');
-    tvChannelsTVProgramm.forEach((elem, i) => {
-        TV_PROGRAMM_DATA[i].programm.forEach(el => tvChannelsTVProgramm[i].innerHTML += tvChannelsTVProgrammItem(el));
-        tvChannelsTVProgramm[i].firstChild.classList.add('font_color_red');
-    });
-*/
 
     const films = new Films();
     films.createFilms();
@@ -63,11 +46,12 @@ window.onload = function() {
         const login = document.getElementById('login').value;
         const password = document.getElementById('password').value;
 
-        if (login && password
+        /*if (login && password
             && login.length >= 3 && login.length <= 16
-            && password.match('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})')
-        ) {
-            const signOut = document.querySelector('#sign-out');
+            && password.match('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})')*/ // для полной проверки пароля
+        if (login && password) {
+
+            const signOutButton = document.querySelector("#sign-out");
             authorHeader.classList.remove('display_none');
             unauthorHeader.classList.add('display_none');
             authorizationFade.classList.add('display_none');
@@ -77,7 +61,7 @@ window.onload = function() {
                     headerUsername.innerHTML = localStorage.getItem('username');
                 }
             }
-            signOut.onclick = signOutOnclickHandler;
+            signOutButton.addEventListener('click', signOutOnclickHandler);
         } else {
             formError.classList.remove('display_none');
             setTimeout(() => { formError.classList.add('display_none'); }, 6000);
@@ -94,17 +78,15 @@ window.onload = function() {
         authorizationFade.classList.remove('display_none');
 
         const authorizationForm = document.querySelector('.authorization__form');
+        const authButton = document.querySelector(".authorization__button");
         const signIn = document.querySelector('#sign-in');
 
-        authorizationFade.onclick = () => authorizationFade.classList.add('display_none');
-        authorizationForm.onclick = event => event.stopPropagation();
-        signIn.onclick = signInOnclickHandler;
+        authButton.addEventListener('click', signInOnclickHandler);
+        authorizationFade.addEventListener('click', () => authorizationFade.classList.add('display_none'));
+        authorizationForm.addEventListener('click', event => event.stopPropagation());
+        signIn.addEventListener('click', signInOnclickHandler);
     }
 
-    openTheFormSignIn.onclick = openTheFormSignInHandler;
+    openTheFormSignIn.addEventListener('click', openTheFormSignInHandler);
     headerUsername.addEventListener('focusout', headerUsernameOnFocusoutHandler);
-
-/*    const auth = Authorization(openTheFormSignIn, authorizationFade, unauthorHeader, authorHeader, headerUsername, username);
-    openTheFormSignIn.onclick = auth.openTheFormSignInHandler;
-    headerUsername.addEventListener('focusout', auth.headerUsernameOnFocusoutHandler);*/
 }
