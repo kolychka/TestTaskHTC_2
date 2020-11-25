@@ -6,3 +6,7 @@ Launch index.html
 
 
 Example login && password: Qwert@1 && Qwert1@34
+
+
+! There is no checkbox symbol in Figma layouts. 
+
