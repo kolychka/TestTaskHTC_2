@@ -5,6 +5,8 @@ window.onload = function() {
     const TABS_ITEM_SELECTOR = '.tabs__item';
     const DATA_ITEM_SELECTOR = '.data__item';
 
+    const layouts = new Layout();
+
     const tabsItems = document.querySelectorAll(TABS_ITEM_SELECTOR);
     const dataItems = document.querySelectorAll(DATA_ITEM_SELECTOR);
     tabsItems.forEach(item => {
@@ -21,11 +23,12 @@ window.onload = function() {
         });
     });
 
-    const films = new Films();
+    const films = new Films(layouts);
     films.createFilms();
 
-    const tvProgramm = new TVChannels();
+    const tvProgramm = new TVChannels(layouts);
     tvProgramm.createTVProgramm();
+
 
     const openTheFormSignIn = document.querySelector('#open-the-form-sign-in');
     const authorizationFade = document.querySelector('.authorization__fade');
@@ -46,10 +49,10 @@ window.onload = function() {
         const login = document.getElementById('login').value;
         const password = document.getElementById('password').value;
 
-        /*password.match('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})')*/ // для полной проверки пароля
         if (login && password
             && login.length >= 3 && login.length <= 16
             && password.length >= 5 && password.length <= 20
+            /*password.match('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})')*/ // для полной проверки пароля
         ) {
             const signOutButton = document.querySelector("#sign-out");
             authorHeader.classList.remove('display_none');
@@ -74,7 +77,7 @@ window.onload = function() {
     }
 
     function openTheFormSignInHandler() {
-        authorizationFade.innerHTML = popupWindow();
+        authorizationFade.innerHTML = layouts.authLayout;
         authorizationFade.classList.remove('display_none');
 
         const authorizationForm = document.querySelector('.authorization__form');

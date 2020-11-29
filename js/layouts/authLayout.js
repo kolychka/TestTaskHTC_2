@@ -1,4 +1,4 @@
-const popupWindow = () => `<form class="body authorization__form">						
+Layout.prototype.authLayout = `<form class="body authorization__form">						
                                 <label class="font_weight_medium text-block font_size_m line-height_m authorization__elem_margin_b authorization__label">Вход</label>
                                 <section class="authorization__inputs">
                                     <label>
