@@ -1,0 +1,1 @@
+Template.prototype.tvChannelsTemplate = () => '<article class="tv-channels data__item">каналы</article>';

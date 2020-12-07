@@ -10,9 +10,9 @@
     display: inline-block;
     height: 16px;
     width: 16px;
-    line-height: 22px;
+    line-height: 20px;
     text-align: center;
-    vertical-align: middle;
+    vertical-align: baseline;
 
     content: "\2714";
     color: transparent;
