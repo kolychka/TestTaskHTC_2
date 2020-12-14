@@ -1,11 +1,11 @@
 class Component {
-    constructor({ id, parent, template = () => '<div>дефолтный шаблон</div>', templateParams = null, callbacks = {}}) {
+    constructor({ id, parent, template = () => '<div>дефолтный шаблон</div>', templateParams = null, callbacks = {}, classNames}) {
         // записать данные
         this.id = id;
         this.parent = parent;
         this.callbacks = callbacks;
         // сгенерировать разметку компоненты, положить её на страницу и обработать события
-        this.render(template(templateParams));
+        this.render(template(templateParams), classNames);
         this.addEventListeners();
     }
 
@@ -18,9 +18,12 @@ class Component {
     }
 
     // Обязательно нужно вызывать метод родителя
-    render(template) {
+    render(template, classNames) {
         const elem = document.createElement('div');
         elem.setAttribute('id', this.id);
+        if (classNames) {
+            classNames.split(' ').forEach(className => elem.classList.add(className));
+        }
         elem.innerHTML = template;
         if (this.parent) {
             document.getElementById(this.parent).appendChild(elem);

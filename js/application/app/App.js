@@ -2,55 +2,84 @@ class App extends Component {
 
     constructor(options) {
         super(options);
+        this.authorizationForm = new AuthorizationForm({ 
+            id: 'authorization',
+            parent: this.id,
+            template: template.authorizationFormTemplate,
+            callbacks: {
+                submitForm: (formError, login, password) => this.submitForm(formError, login, password) // отправить логин и пароль на проверку
+                // показать сообщение об ошибке
+            }
+        });
         this.header = new Header({ 
             id: 'header', 
             parent: this.id,
-            template: template.headerTemplate
+            template: template.headerTemplate,
+            templateParams: {
+                USERNAME,
+                /*authorized : false*/
+            },
+            callbacks: {
+                openForm: () => this.openForm(), // открыть окно формы
+                signIn: () => this.signIn() // скрыть кнопку "войти", открыть имя и кнопку "выйти"
+            }
         });
         this.article = new Article({
             id: 'article',
             parent: this.id,
             template: template.articleTemplate,
-            callbacks: {
-                showFilms: () => this.showFilms(),
-                showTVChannels: () => this.showTVChannels(),
-                //login: () => {}
-            }
-        });
-        this.films = new Films({ 
-            id: 'films', 
-            parent: 'article-content',
-            template: template.filmsTemplate
-        });
-        this.tvChannels = new TVChannels({ 
-            id: 'tv-channels',
-            parent: 'article-content',
-            template: template.tvChannelsTemplate 
+            templateParams: NEW_FILMS_DATA
         });
         this.footer = new Footer({
             id: 'footer',
             parent: this.id,
-            template: template.footerTemplate
+            template: template.footerTemplate,
+            classNames: 'siski and asses', // ПОПРАВИТЬ ВЁРСТКУ! О-ЛО-ЛО!
         });
-
-        // проинициализировать что-нибудь, что нам нужно
-        this.tvChannels.hide();
+        this.authorizationForm.hide();
     }
 
-    // скорее всего не понадобится
-    render(template) {
-        super.render(template);
-        //....
-        console.log('Я сработал!!');
+    visible(elem) {
+        elem.classList.remove('display_none');
+    }
+    invisible(elem) {
+        elem.classList.add('display_none');
     }
 
-    showFilms() {
-        this.tvChannels.hide();
-        this.films.show();
+    openForm() {
+        this.authorizationForm.show();
     }
 
-    showTVChannels() {
-        this.films.hide();
-        this.tvChannels.show();
+    signIn() {
+        return true;
     }
+
+    submitForm(formError, login, password) {
+        if (login && password
+            && login.length >= 3 && login.length <= 16
+            && password.length >= 5 && password.length <= 20
+            /*password.match('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})')*/ // для полной проверки пароля
+        ) {
+            /*const signOutButton = document.querySelector("#sign-out");
+            authorHeader.classList.remove('display_none');
+            unauthorHeader.classList.add('display_none');
+            authorizationFade.classList.add('display_none');
+            headerUsername.innerHTML = username;
+            if (headerUsername) {
+                if (localStorage.getItem('username')) {
+                    headerUsername.innerHTML = localStorage.getItem('username');
+                }
+            }
+            signOutButton.addEventListener('click', signOutOnclickHandler);*/
+            console.log('получилось', formError, login, password);
+            // this.visible(document.querySelector('.authorized-header'));
+            // this.invisible(document.querySelector('.unauthorized-header'));
+            this.authorizationForm.hide();
+        } else {
+            console.log('не получилось', formError, login, password);
+            formError.classList.remove('display_none');
+            setTimeout(() => { formError.classList.add('display_none'); }, 6000);
+        }
+    }
+
 }
