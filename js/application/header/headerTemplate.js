@@ -1,34 +1,9 @@
-Template.prototype.headerTemplate = (USERNAME/*, authorized*/) => {
+Template.prototype.headerTemplate = () => {
 
-    const headerUsername = document.querySelector('.header__username');
     const username = USERNAME.surname ? `${USERNAME.name} ${USERNAME.surname.charAt(0)}.` : USERNAME.name;
 
-    function headerUsernameOnFocusoutHandler() {
-        if (this.innerHTML.replace('^[^\s]*/', '')) {
-            localStorage.setItem('username', this.innerHTML);
-        }
-    }
-
     function addUsername() {
-        headerUsername.innerHTML = username;
-        if (headerUsername) {
-            if (localStorage.getItem('username')) {
-                headerUsername.innerHTML = localStorage.getItem('username');
-            }
-        }
-    }
-
-    function authorizedHeader() {
-        if (0) {
-            return `<section class="authorized-header display_none">
-                        <label class="header__username font_weight_medium cursor_pointer" contenteditable="true"></label>
-                        <button id="sign-out" class="font-default button-default button-text cursor_pointer">Выйти</button>
-                    </section>`;
-        } else {
-            return `<section class="unauthorized-header">
-                        <button id="open-the-form-sign-in" class="font-default button-default button cursor_pointer">Войти</button>
-                    </section>`;
-        }
+        return localStorage.getItem('username') ? localStorage.getItem('username') : username;
     }
 
     return `<section class="display_j-c_center">
@@ -42,17 +17,15 @@ Template.prototype.headerTemplate = (USERNAME/*, authorized*/) => {
                     <button class="font-default button-default button-text cursor_pointer">Найти</button>
                 </section>
                 <section>
-                    ${authorizedHeader()}
-                    <!--<section class="authorized-header display_none">
-                        <label class="header__username font_weight_medium cursor_pointer" contenteditable="true"></label>
+                    <section class="authorized-header display_none">
+                        <label class="header__username font_weight_medium cursor_pointer" contenteditable="true">${addUsername()}</label>
                         <button id="sign-out" class="font-default button-default button-text cursor_pointer">Выйти</button>
-                    </section>-->
-                    <!--<section class="unauthorized-header">
+                    </section>
+                    <section class="unauthorized-header">
                         <button id="open-the-form-sign-in" class="font-default button-default button cursor_pointer">Войти</button>
-                    </section>-->
+                    </section>
                 </section>
             </header>
         </section>
     </section>`;
-
 }
