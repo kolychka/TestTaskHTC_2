@@ -1,0 +1,49 @@
+.authorization__elem_margin_b {
+    margin-bottom: 24px;
+}
+
+.authorization__fade {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51,51,51, 0.6);
+    z-index: 1;
+}
+.authorization__fade .body{
+    position: relative;
+    left: calc((100% - 304px)/2);
+    top: calc((100% - 394px)/2);
+}
+
+.authorization__form {
+    display: block;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 36px;
+    background: #FFFFFF;
+    width: 304px;
+    height: 394px;
+}
+
+.authorization__input-login-password {
+    width: 230px;
+    height: 25px;
+}
+
+.authorization__button {
+    position: absolute;
+    bottom: 36px;
+    left: 96px;
+}
+
+.authorization__label {
+    position: absolute;
+    top: 36px;
+    left: 117px;
+}
+
+.authorization__inputs {
+    position: absolute;
+    top: 93px;
+}
