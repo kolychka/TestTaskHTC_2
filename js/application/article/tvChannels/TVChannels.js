@@ -1,2 +1,1 @@
-class TVChannels extends Component {
-}
+class TVChannels extends Component {}

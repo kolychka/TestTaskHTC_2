@@ -11,26 +11,3 @@ Template.prototype.articleTemplate = () => `
         </header>
     </section>
 </section>`;
-
-/*filmsLayout(el) {
-        return `<section class="movie__item movie__img_margins">
-            <div class="movie__img-container movie__img-container_margin_b cursor_pointer">
-                <div class="movie__img">
-                    <img class="movie__img_border-radius" src="images/posters/${el.img}" alt="">
-                </div>
-                <div class="fade movie__fade movie__fade_text">${el.annotation}</div>
-            </div>
-            <label class="font_size_s line-height_xs">${el.title}</label>
-        </section>`;
-    }
-
-
-    createNewFilms() {
-        const newFilms = document.querySelector('.movie');
-        NEW_FILMS_DATA.forEach(el => newFilms.innerHTML += filmsLayout(el));
-        newFilms.lastChild.classList.remove('movie__img_margins');
-        newFilms.lastChild.classList.add('movie__img_margins_last-child');
-    }
-
-
-    */

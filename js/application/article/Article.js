@@ -14,7 +14,7 @@ class Article extends Component {
             template: template.tvChannelsTemplate,
             templateParams: TV_PROGRAMM_DATA
         });
-        // проинициализировать что-нибудь, что нам нужно
+        // инициализация того, что нам нужно
         this.tvChannels.hide();
     }
     
@@ -45,13 +45,6 @@ class Article extends Component {
             // меняем наполнение страницы
             this.showTVChannels();
         });
-        /*document.getElementById('loginButton').addEventListener('click', () => this.loginButton());*/
     }
 
-
-/*    loginButton() {
-        // сначала что-то делаем про авторизацию (взять логин и пароль, провалидировать, решить: авторизовался или не очень)
-        //...
-        //this.callbacks.login();
-    }*/
 }

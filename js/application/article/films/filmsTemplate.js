@@ -51,5 +51,5 @@ Template.prototype.filmsTemplate = (data) => {
                     </div>
                 </section>
             </section>
-        </article>`
+        </article>`;
 };

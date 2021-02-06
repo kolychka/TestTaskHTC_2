@@ -1,3 +1,1 @@
-class Films extends Component {
-
-}
+class Films extends Component {}

@@ -1,1 +1,1 @@
-Template.prototype.appTemplate = () => '<!--<div></div>-->';
+Template.prototype.appTemplate = () => '';
