@@ -1,6 +1,5 @@
 function AuthorizationForm() {
     return (
-        // <div classNameName="AuthorizationForm">AuthorizationForm</div>
         <section id="authorization" className="authorization__fade">
             <form className="body authorization__form">						
                 <label className="font_weight_medium text-block font_size_m line-height_m authorization__elem_margin_b authorization__label">Вход</label>

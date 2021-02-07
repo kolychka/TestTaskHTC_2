@@ -1,6 +1,5 @@
 function Footer() {
     return (
-        // <div classNameName="Footer">Footer</div>
         <section className="footer-container footer-container_paddings footer-container_margin_t background_gray">
             <section className="display_j-c_center">
                 <footer className="footer footer_size footer_background footer_padding">

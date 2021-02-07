@@ -23,7 +23,6 @@ function Films() {
     });
 
     return (
-        // <div classNameName="Films">Films</div>
         <article className="films data__item">
             <section>
                 <section className="name-category font_weight_medium font_size_m line-height_s">

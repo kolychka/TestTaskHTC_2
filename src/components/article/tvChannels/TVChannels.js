@@ -36,7 +36,6 @@ function TVChannels() {
     );
 
     return (
-        // <div classNameName="TVChannels">TVChannels</div>
         <article className="tv-channels data__item">{str}</article>
     );
 }

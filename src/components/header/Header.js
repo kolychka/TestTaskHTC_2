@@ -11,7 +11,6 @@ function Header() {
     }
 
     return (
-        // <div classNameName="Header"></div>
         <section className="display_j-c_center">
             <section className="header-container">
                 <header className="header header_size header_padding">

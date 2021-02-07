@@ -72,3 +72,5 @@ const TV_PROGRAMM_DATA = [
         ]
     }
 ];
+
+export default TV_PROGRAMM_DATA;

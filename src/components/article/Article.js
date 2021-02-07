@@ -1,6 +1,5 @@
 function Article() {
     return (
-        // <div classNameName="Article">Article</div>
     <section className="display_j-c_center main__section_margin">
         <section id="article-content">
             <header>
