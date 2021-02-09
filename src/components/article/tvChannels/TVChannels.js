@@ -1,43 +1,41 @@
+import React from 'react';
 import data from '../../../data/tv-channels.js';
 
-function TVChannels() {
+class TVChannels extends React.Component {
 
-    function addLogoTVCannel(img) {
-        return "<img src=\"images/channels-logotypes/" + img + "\" alt=\"\">";
-    }
-
-    function addProgramm(programm) {
-        let str = '';
-        let color = '';
-        programm.forEach((el, i) => {
-
-            if (i === 0) {
-                color = 'font_color_red'
-            } else {
-                color = ''
-            }
-
-            str += `<section className="tv-channels__tv-programm_margin_b ${color}">
-                <label className="tv-channels__tv-programm_time">${el.timeStart}</label>
-                <label className="tv-channels__tv-programm_title">${el.title}</label>
-            </section>`;
+    addProgram(program) {
+        program.map((el, i) => {
+            const color = (i === 0) ? 'font_color_red' : '';
+            return (
+                <section className={"tv-channels__tv-program_margin_b" + color}>
+                    <label className="tv-channels__tv-program_time">{el.timeStart}</label>
+                    <label className="tv-channels__tv-program_title">{el.title}</label>
+                </section>
+            )
         });
-        return str;
     }
 
-    let str = '';
-    data.forEach(tvProgramm => str+= `<section className="tv-channels__item tv-channels__item_margins background_gray">
-            <section className="tv-channels__img-section">${addLogoTVCannel(tvProgramm.img)}</section>
-            <section className="tv-channels__text_paddings">
-                <label className="text-block tv-channels__title_paddings font_weight_medium font_size_s line-height_xs">${tvProgramm.title}</label>
-                <section className="tv-channels__tv-programm">${addProgramm(tvProgramm.programm)}</section>
-            </section>
-        </section>`
-    );
+    addLogoTVCannel(img) {
+        return (<img src={"images/channels-logotypes/" + img} alt="" />);
+    }
 
-    return (
-        <article className="tv-channels data__item">{str}</article>
-    );
+    render() {    
+        return (
+            <article className="tv-channels data__item">{
+                data.map((tvProgram, i) => {
+                    return (
+                        <section className="tv-channels__item tv-channels__item_margins background_gray">
+                            <section className="tv-channels__img-section">{this.addLogoTVCannel(tvProgram.img)}</section>
+                            <section className="tv-channels__text_paddings">
+                                <label className="text-block tv-channels__title_paddings font_weight_medium font_size_s line-height_xs">{tvProgram.title}</label>
+                                <section className="tv-channels__tv-program">{this.addProgram(tvProgram.program)}</section>
+                            </section>
+                        </section>
+                    )
+                }) 
+            }</article>
+        );
+    }
 }
 
 export default TVChannels;

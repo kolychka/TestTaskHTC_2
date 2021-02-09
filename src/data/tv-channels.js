@@ -1,8 +1,8 @@
-const TV_PROGRAMM_DATA = [
+const TV_PROGRAM_DATA = [
     {
         img: '1st.png',
         title: 'Первый канал',
-        programm: [
+        program: [
             {
                 timeStart: '13:00',
                 title: 'Новости (с субтитрами)'
@@ -20,7 +20,7 @@ const TV_PROGRAMM_DATA = [
     {
         img: '2x2.png',
         title: '2x2',
-        programm: [
+        program: [
             {
                 timeStart: '13:00',
                 title: 'МУЛЬТ ТВ. Сезон 4, 7 серия'
@@ -38,7 +38,7 @@ const TV_PROGRAMM_DATA = [
     {
         img: 'rbc.png',
         title: 'РБК',
-        programm: [
+        program: [
             {
                 timeStart: '13:00',
                 title: 'ДЕНЬ. Горючая смесь: как бороться с суррогатом на АЗС'
@@ -56,7 +56,7 @@ const TV_PROGRAMM_DATA = [
     {
         img: 'Amediateka.png',
         title: 'AMEDIA PREMIUM',
-        programm: [
+        program: [
             {
                 timeStart: '13:00',
                 title: 'Клиент всегда мёртв'
@@ -73,4 +73,4 @@ const TV_PROGRAMM_DATA = [
     }
 ];
 
-export default TV_PROGRAMM_DATA;
+export default TV_PROGRAM_DATA;
