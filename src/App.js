@@ -24,18 +24,30 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { needToLogin: false, menuTab: 'films' };
+    this.state = { needToLogin: false, menuTab: 'films', authorized: false };
   }
 
-  setNeedToLogin(value) {
+  setNeedToLogin(value) { // Отвечает за открытие формы авторизации. Если авторизация прошла успешно, закрывает окно с формой авторизации.
     this.setState({ needToLogin: value });
+  }
+
+  setAuthorized(value) { // Отвечает за состояние хедера. Если авторизация прошла успешно, открывает имя пользователя.
+    this.setState({ authorized: value });
   }
 
   render() {
     return (
       <div className="App">
-        <Header></Header>
-        {this.state.needToLogin ? <AuthorizationForm setNeedToLogin={(value) => this.setNeedToLogin(value)}></AuthorizationForm> : '' }
+        <Header 
+          setNeedToLogin={(value) => this.setNeedToLogin(value)} 
+          setAuthorized={(value) => this.setAuthorized(value)}
+          ></Header>
+        {this.state.needToLogin ? 
+          <AuthorizationForm 
+          setNeedToLogin={(value) => this.setNeedToLogin(value)}
+          setAuthorized={(value) => this.setAuthorized(value)}
+          ></AuthorizationForm> : '' 
+        }
         <Article></Article>
         {this.state.menuTab === 'films' ? 
           <Films></Films> : 

@@ -6,11 +6,12 @@ class AuthorizationForm extends React.Component {
         super(props);
         
         this.setNeedToLogin = props.setNeedToLogin;
+        this.setAuthorized = props.setAuthorized;
     }
 
     onLogin(event) {
         event.preventDefault();
-        const formError = document.querySelector('.authorization__form_error');
+        // const formError = document.querySelector('.authorization__form_error');
         const login = document.getElementById('login').value;
         const password = document.getElementById('password').value;
 
@@ -21,6 +22,7 @@ class AuthorizationForm extends React.Component {
         ) {
 
             this.setNeedToLogin(false);
+            this.setAuthorized(true);
 
             /*
             // меняем классы у section-частей хедера, в который лежат кнопки и имя пользователя
