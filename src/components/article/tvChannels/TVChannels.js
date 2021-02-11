@@ -4,7 +4,7 @@ import data from '../../../data/tv-channels.js';
 class TVChannels extends React.Component {
 
     addProgram(program) {
-        program.map((el, i) => {
+        return program.map((el, i) => {
             const color = (i === 0) ? 'font_color_red' : '';
             return (
                 <section className={"tv-channels__tv-program_margin_b" + color}>

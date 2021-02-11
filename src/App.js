@@ -17,42 +17,39 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import AuthorizationForm from './components/authorizationForm/AuthorizationForm';
 import Article from './components/article/Article';
-import Films from './components/article/films/Films';
-import TVChannels from './components/article/tvChannels/TVChannels';
 
 class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { needToLogin: false, menuTab: 'films', authorized: false };
+    this.state = { 
+      needToLogin: false, // показывать или нет форму авторизации 
+    };
   }
 
-  setNeedToLogin(value) { // Отвечает за открытие формы авторизации. Если авторизация прошла успешно, закрывает окно с формой авторизации.
+  openCloseAuthForm(value) { // Отвечает за открытие формы авторизации. Если авторизация прошла успешно, закрывает окно с формой авторизации.
     this.setState({ needToLogin: value });
   }
 
-  setAuthorized(value) { // Отвечает за состояние хедера. Если авторизация прошла успешно, открывает имя пользователя.
-    this.setState({ authorized: value });
+  authResult(value) {
+    this.setState({ needToLogin: !value });
+    this.header.setState({ authStatus: value });
   }
 
   render() {
     return (
       <div className="App">
-        <Header 
-          setNeedToLogin={(value) => this.setNeedToLogin(value)} 
-          setAuthorized={(value) => this.setAuthorized(value)}
-          ></Header>
         {this.state.needToLogin ? 
           <AuthorizationForm 
-          setNeedToLogin={(value) => this.setNeedToLogin(value)}
-          setAuthorized={(value) => this.setAuthorized(value)}
-          ></AuthorizationForm> : '' 
+            authResult={(value) => this.authResult(value)}
+          ></AuthorizationForm> : ''
         }
+        <Header 
+          ref={header => this.header = header}
+          openCloseAuthForm={(value) => this.openCloseAuthForm(value)} 
+          authStatus={this.state.needToLogin}
+        ></Header>
         <Article></Article>
-        {this.state.menuTab === 'films' ? 
-          <Films></Films> : 
-          <TVChannels></TVChannels>
-        }
         <Footer></Footer>
       </div>
     );

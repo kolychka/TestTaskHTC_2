@@ -4,29 +4,35 @@ class Header extends React.Component {
 
     constructor(props) {
         super(props);
-        
-        this.setNeedToLogin = props.setNeedToLogin;
-        this.setAuthorized = props.setAuthorized;
+        this.openCloseAuthForm = props.openCloseAuthForm;
+        this.state = {
+            authStatus: props.authStatus
+        };
     }
 
     onSignIn(event) {
         event.preventDefault();
-        
-        this.setNeedToLogin(true); // открыть форму авторизации
+        this.openCloseAuthForm(true); // открыть форму авторизации
+    }
+
+    onSignOut(event) {
+        event.preventDefault();
+        this.setState({ authStatus: false });
     }
 
     addUsername() {
         return localStorage.getItem('username') ? localStorage.getItem('username') : 'Константин К.';
     }
 
-    authorizedHeader(authorized) {
-        console.log(this.setAuthorized);
-        console.log(authorized);
-        if (authorized) {
+    authorizedHeader() {
+        if (this.state.authStatus) {
             return (
                 <section className="authorized-header">
                     <label className="header__username font_weight_medium cursor_pointer" contenteditable="true">{this.addUsername()}</label>
-                    <button id="sign-out" className="font-default button-default button-text cursor_pointer">Выйти</button>
+                    <button 
+                        className="font-default button-default button-text cursor_pointer"
+                        onClick={(event) => this.onSignOut(event)}
+                    >Выйти</button>
                 </section>
             )
         }
@@ -35,7 +41,7 @@ class Header extends React.Component {
                 <button 
                     className="font-default button-default button cursor_pointer"
                     onClick={(event) => this.onSignIn(event)}
-                    >Войти</button>
+                >Войти</button>
             </section>
         )
     }
@@ -53,7 +59,7 @@ class Header extends React.Component {
                             <button className="font-default button-default button-text cursor_pointer">Найти</button>
                         </section>
                         <section>
-                            {this.authorizedHeader(this.setAuthorized.value)}
+                            {this.authorizedHeader()}
                         </section>
                     </header>
                 </section>

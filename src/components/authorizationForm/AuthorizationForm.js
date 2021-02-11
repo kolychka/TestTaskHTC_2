@@ -5,8 +5,7 @@ class AuthorizationForm extends React.Component {
     constructor(props) {
         super(props);
         
-        this.setNeedToLogin = props.setNeedToLogin;
-        this.setAuthorized = props.setAuthorized;
+        this.authResult = props.authResult;
     }
 
     onLogin(event) {
@@ -21,8 +20,7 @@ class AuthorizationForm extends React.Component {
             /*password.match('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})')*/ // для полной проверки пароля
         ) {
 
-            this.setNeedToLogin(false);
-            this.setAuthorized(true);
+            this.authResult(true);
 
             /*
             // меняем классы у section-частей хедера, в который лежат кнопки и имя пользователя
@@ -32,7 +30,7 @@ class AuthorizationForm extends React.Component {
             */
         } else {
 
-            this.setNeedToLogin(true);
+            this.authResult(false);
 
             console.log('показать страшную ошибку');
         }
@@ -49,7 +47,7 @@ class AuthorizationForm extends React.Component {
                             <input id="password" type="password" className="font-default text-block authorization__input-login-password input_line-bottom authorization__elem_margin_b" placeholder="Пароль" />
                         </label>
                         <input id="checkbox-remember" type="checkbox" className="checkbox checkbox_margins authorization__elem_margin_b" />
-                        <label for="checkbox-remember" className="font-default text-block authorization__elem_margin_b authorization__elem_margin_l">Запомнить</label>
+                        <label htmlFor="checkbox-remember" className="font-default text-block authorization__elem_margin_b authorization__elem_margin_l">Запомнить</label>
                         <label className="authorization__form_error display_none">Не удаётся войти. Пожалуйста, проверьте правильность написания логина и пароля.</label>
                     </section>
                     <button 
