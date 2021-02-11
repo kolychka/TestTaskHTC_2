@@ -12,6 +12,9 @@
 .tv-channels .tv-channels__item_margins:last-of-type {
     margin-bottom: 0;
 }
+.tv-channels__item_padding {
+    padding: 7px 0;
+}
 
 .tv-channels {
     overflow-y: scroll;
@@ -35,22 +38,18 @@
     height: inherit;
 }
 
-.tv-channels__text_paddings {
-    padding: 5px 0;
-}
-
 .tv-channels__title_paddings {
     padding: 17px 0;
 }
 
-.tv-channels__tv-programm_margin_b {
+.tv-channels__tv-program_margin_b {
     margin-bottom: 12px;
 }
 
-.tv-channels__tv-programm_time {
-    width: 46px;
+.tv-channels__tv-program_margin_r {
+    margin-right: 16px;
 }
 
-.tv-channels__tv-programm_title {
+.tv-channels__tv-program_title {
     width: 694px;
 }

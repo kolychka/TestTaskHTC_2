@@ -1,5 +1,7 @@
 import React from 'react';
 import data from '../../../data/films.js';
+import '../../css/movie.css';
+import '../../css/genres.css';
 
 class Films extends React.Component {
     render() {
@@ -14,7 +16,7 @@ class Films extends React.Component {
                         data.map((film, i) => {
                             const imgMargins = (data.length - 1 === i) ? 'movie__img_margins_last-child' : 'movie__img_margins';
                             return (
-                                <section className={'movie__item' + imgMargins}>
+                                <section key={i} className={'movie__item' + imgMargins}>
                                     <div className="movie__img-container movie__img-container_margin_b cursor_pointer">
                                         <div className="movie__img">
                                             <img className="movie__img_border-radius" src={`images/posters/${film.img}`} alt="" />

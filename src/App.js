@@ -3,13 +3,6 @@ import './App.css';
 
 import './components/css/main.css';
 import './components/css/font.css';
-import './components/css/header.css';
-import './components/css/footer.css';
-import './components/css/authorization.css';
-import './components/css/tabs.css';
-import './components/css/movie.css';
-import './components/css/tv-channels.css';
-import './components/css/genres.css';
 import './components/css/button.css';
 import './components/css/checkbox.css';
 
@@ -38,7 +31,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="font-default">
         {this.state.needToLogin ? 
           <AuthorizationForm 
             authResult={(value) => this.authResult(value)}

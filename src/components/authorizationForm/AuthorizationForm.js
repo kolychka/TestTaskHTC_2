@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/authorization.css';
 
 class AuthorizationForm extends React.Component {
 
@@ -17,7 +18,6 @@ class AuthorizationForm extends React.Component {
         if (login && password
             && login.length >= 3 && login.length <= 16
             && password.length >= 5 && password.length <= 20
-            /*password.match('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})')*/ // для полной проверки пароля
         ) {
 
             this.authResult(true);

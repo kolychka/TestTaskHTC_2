@@ -1,6 +1,7 @@
 import React from 'react';
 import Films from './films/Films';
 import TVChannels from './tvChannels/TVChannels';
+import '../css/tabs.css';
 
 class Article extends React.Component {
     constructor(props) {

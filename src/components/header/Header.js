@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/header.css';
 
 class Header extends React.Component {
 
@@ -24,11 +25,22 @@ class Header extends React.Component {
         return localStorage.getItem('username') ? localStorage.getItem('username') : 'Константин К.';
     }
 
+    usernameOnBlurHandler(username) { // сохраняем в local storage имя пользователя после изменения
+        console.log(username);
+        // if (username.replace(/(^[\s]+|[\s]+$)/g, '')) {
+        //     localStorage.setItem('username', username);
+        // }
+    }
+
     authorizedHeader() {
         if (this.state.authStatus) {
             return (
                 <section className="authorized-header">
-                    <label className="header__username font_weight_medium cursor_pointer" contenteditable="true">{this.addUsername()}</label>
+                    <label 
+                        className="header__username header__username_margin_r font_weight_medium cursor_pointer" 
+                        contenteditable="true"
+                        onBlur={(username) => this.usernameOnBlurHandler(username)}
+                    >{this.addUsername()}</label>
                     <button 
                         className="font-default button-default button-text cursor_pointer"
                         onClick={(event) => this.onSignOut(event)}
@@ -58,7 +70,7 @@ class Header extends React.Component {
                             <label><input className="font-default search search_color search_margins input_line-bottom" type="text" placeholder="Поиск..." /></label>
                             <button className="font-default button-default button-text cursor_pointer">Найти</button>
                         </section>
-                        <section>
+                        <section className="header__authorization-element">
                             {this.authorizedHeader()}
                         </section>
                     </header>
