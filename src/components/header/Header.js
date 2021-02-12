@@ -38,7 +38,7 @@ class Header extends React.Component {
                 <section className="authorized-header">
                     <label 
                         className="header__username header__username_margin_r font_weight_medium cursor_pointer" 
-                        contenteditable="true"
+                        // contenteditable="true"
                         onBlur={(username) => this.usernameOnBlurHandler(username)}
                     >{this.addUsername()}</label>
                     <button 

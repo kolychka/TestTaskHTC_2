@@ -7,7 +7,7 @@ class Article extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            menuTab: 'films',
+            activeTab: 'films',
         }
     }
 
@@ -19,16 +19,20 @@ class Article extends React.Component {
                         <header>
                             <nav>
                                 <ul className="tabs tabs_padding_l tabs_margin_vert font_weight_medium font_size_l line-height_m">
-                                    <li id="films-button" data-content-item="films" className="tabs__item tabs__item_margin_r cursor_pointer active"
+                                    <li 
+                                        className={"tabs__item tabs__item_margin_r cursor_pointer" + 
+                                            (this.state.activeTab === 'films' ? " active" : "")}
                                         onClick={(event) => {
                                             event.preventDefault();
-                                            this.setState({menuTab: 'films'});
+                                            this.setState({ activeTab: 'films' });
                                         }}
                                     >Фильмы</li>
-                                    <li id="tv-channels-button" data-content-item="tv-channels" className="tabs__item tabs__item_margin_r cursor_pointer"
+                                    <li 
+                                        className={"tabs__item tabs__item_margin_r cursor_pointer" + 
+                                            (this.state.activeTab === 'tvChannels' ? " active" : "")}
                                         onClick={(event) => {
                                             event.preventDefault();
-                                            this.setState({menuTab: 'tvChannels'});
+                                            this.setState({ activeTab: 'tvChannels' });
                                         }}
                                     >Телеканалы</li>
                                 </ul>
@@ -36,7 +40,7 @@ class Article extends React.Component {
                         </header>
                     </section>
                 </section>
-                {this.state.menuTab === 'films' ? 
+                {this.state.activeTab === 'films' ? 
                     <Films></Films> : 
                     <TVChannels></TVChannels>
                 }
