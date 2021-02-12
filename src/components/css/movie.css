@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
 }
-.movie_margin_vert {
+.movie_margins {
     margin: 16px 0;
 }
 
@@ -27,19 +27,24 @@
 .movie__img_border-radius {
     border-radius: 8px;
 }
-.movie__img_margins {
+/* .movie__img_margins {
     margin-right: 20px;
     margin-bottom: 16px;
 }
 .movie__img_margins_last-child {
     margin-right: 0;
+} */
+
+.movie__title {
+    width: 280px;
+    height: 48px;
 }
 
 .movie__fade {
     position: relative;
     top: -370px;
-    max-width: inherit;
-    height: inherit;
+    max-width: 280px;
+    height: 370px;
     opacity: 0;
     border-radius: 8px;
 }
