@@ -8,6 +8,13 @@ class AuthorizationForm extends React.Component {
         
         this.openCloseAuthForm = props.openCloseAuthForm;
         this.authResult = props.authResult;
+        this.state = {
+            showError: false
+        }
+    }
+
+    showHideError(value) {
+        this.setState({ showError: value });
     }
 
     onLogin(event) {
@@ -25,7 +32,9 @@ class AuthorizationForm extends React.Component {
 
             this.authResult(false);
 
-            console.log('показать страшную ошибку');
+            this.showHideError(true);
+
+            console.log('показать страшную ошибку', this.state.showError);
         }
     }
 
@@ -38,7 +47,8 @@ class AuthorizationForm extends React.Component {
                     this.openCloseAuthForm(false); // закрыть форму авторизации
                 }}
             >
-                <form className="body authorization__form"
+                <form 
+                    className="body authorization__form"
                     onClick={event => event.stopPropagation()} // останавливаем всплытие, чтобы форма не закрылась случайно
                 >
                     <label className="font_weight_medium text-block font_size_m line-height_m authorization__elem_margin_b authorization__label">Вход</label>
@@ -49,7 +59,14 @@ class AuthorizationForm extends React.Component {
                         </label>
                         <input id="checkbox-remember" type="checkbox" className="checkbox checkbox_margins authorization__elem_margin_b" />
                         <label htmlFor="checkbox-remember" className="font-default text-block authorization__elem_margin_b authorization__elem_margin_l">Запомнить</label>
-                        <label className="authorization__form_error display_none">Не удаётся войти. Пожалуйста, проверьте правильность написания логина и пароля.</label>
+                        <label 
+                            className={"authorization__form_error" + 
+                            (this.state.showError === true ? 
+                                "" : // console.log(this.state.showError === true) :
+                                // setTimeout(() => "", 6000) :
+                                " display_none"
+                            )}
+                        >Не удаётся войти. Пожалуйста, проверьте правильность написания логина и пароля.</label>
                     </section>
                     <button 
                         className="font-default button-default button cursor_pointer authorization__button" 
