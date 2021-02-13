@@ -6,6 +6,7 @@ class AuthorizationForm extends React.Component {
     constructor(props) {
         super(props);
         
+        this.openCloseAuthForm = props.openCloseAuthForm;
         this.authResult = props.authResult;
     }
 
@@ -19,15 +20,7 @@ class AuthorizationForm extends React.Component {
             && login.length >= 3 && login.length <= 16
             && password.length >= 5 && password.length <= 20
         ) {
-
             this.authResult(true);
-
-            /*
-            // меняем классы у section-частей хедера, в который лежат кнопки и имя пользователя
-            this.visible(document.querySelector('.authorized-header'));
-            this.invisible(document.querySelector('.unauthorized-header'));
-            this.authorizationForm.hide(); // скрываем форму авторизации
-            */
         } else {
 
             this.authResult(false);
@@ -38,8 +31,16 @@ class AuthorizationForm extends React.Component {
 
     render() {
         return (
-            <section className="authorization__fade">
-                <form className="body authorization__form">						
+            <section 
+                className="authorization__fade"
+                onClick={(event) => {
+                    event.preventDefault();
+                    this.openCloseAuthForm(false); // закрыть форму авторизации
+                }}
+            >
+                <form className="body authorization__form"
+                    onClick={event => event.stopPropagation()} // останавливаем всплытие, чтобы форма не закрылась случайно
+                >
                     <label className="font_weight_medium text-block font_size_m line-height_m authorization__elem_margin_b authorization__label">Вход</label>
                     <section className="authorization__inputs">
                         <label>

@@ -5,6 +5,7 @@ class Header extends React.Component {
 
     constructor(props) {
         super(props);
+        
         this.openCloseAuthForm = props.openCloseAuthForm;
         this.state = {
             authStatus: props.authStatus
@@ -25,12 +26,12 @@ class Header extends React.Component {
         return localStorage.getItem('username') ? localStorage.getItem('username') : 'Константин К.';
     }
 
-    usernameOnBlurHandler(username) { // сохраняем в local storage имя пользователя после изменения
-        console.log(username);
-        // if (username.replace(/(^[\s]+|[\s]+$)/g, '')) {
-        //     localStorage.setItem('username', username);
-        // }
-    }
+    // usernameOnBlurHandler(username) { // сохраняем в local storage имя пользователя после изменения
+    //     console.log(username);
+    //     // if (username.replace(/(^[\s]+|[\s]+$)/g, '')) {
+    //     //     localStorage.setItem('username', username);
+    //     // }
+    // }
 
     authorizedHeader() {
         if (this.state.authStatus) {
@@ -39,7 +40,7 @@ class Header extends React.Component {
                     <label 
                         className="header__username header__username_margin_r font_weight_medium cursor_pointer" 
                         // contenteditable="true"
-                        onBlur={(username) => this.usernameOnBlurHandler(username)}
+                        // onBlur={(username) => this.usernameOnBlurHandler(username)}
                     >{this.addUsername()}</label>
                     <button 
                         className="font-default button-default button-text cursor_pointer"

@@ -35,6 +35,7 @@ class App extends React.Component {
         {this.state.needToLogin ? 
           <AuthorizationForm 
             authResult={(value) => this.authResult(value)}
+            openCloseAuthForm={(value) => this.openCloseAuthForm(value)} 
           ></AuthorizationForm> : ''
         }
         <Header 
