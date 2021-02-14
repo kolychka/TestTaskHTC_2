@@ -35,10 +35,12 @@ class Header extends React.Component {
 
     authorizedHeader() {
         if (this.state.authStatus) {
+            // suppressContentEditableWarning={true} прячет ошибку реакта (suppress that warning) при использовании contentEditable={true}
             return (
                 <section className="authorized-header">
                     <label 
                         contentEditable={true}
+                        suppressContentEditableWarning={true} 
                         className="header__username header__username_margin_r font_weight_medium cursor_pointer" 
                         onBlur={this.usernameOnBlurHandler}
                     >{this.addUsername()}</label>
