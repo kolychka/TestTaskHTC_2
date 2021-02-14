@@ -26,21 +26,21 @@ class Header extends React.Component {
         return localStorage.getItem('username') ? localStorage.getItem('username') : 'Константин К.';
     }
 
-    // usernameOnBlurHandler(username) { // сохраняем в local storage имя пользователя после изменения
-    //     console.log(username);
-    //     // if (username.replace(/(^[\s]+|[\s]+$)/g, '')) {
-    //     //     localStorage.setItem('username', username);
-    //     // }
-    // }
+    usernameOnBlurHandler(event) { // сохраняем в local storage имя пользователя после изменения
+        const username = event.target.innerHTML;
+        if (username.replace(/(^[\s]+|[\s]+$)/g, '')) {
+            localStorage.setItem('username', username);
+        }
+    }
 
     authorizedHeader() {
         if (this.state.authStatus) {
             return (
                 <section className="authorized-header">
                     <label 
+                        contentEditable={true}
                         className="header__username header__username_margin_r font_weight_medium cursor_pointer" 
-                        // contenteditable="true"
-                        // onBlur={(username) => this.usernameOnBlurHandler(username)}
+                        onBlur={this.usernameOnBlurHandler}
                     >{this.addUsername()}</label>
                     <button 
                         className="font-default button-default button-text cursor_pointer"

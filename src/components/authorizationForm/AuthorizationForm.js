@@ -8,13 +8,14 @@ class AuthorizationForm extends React.Component {
         
         this.openCloseAuthForm = props.openCloseAuthForm;
         this.authResult = props.authResult;
-        this.state = {
-            showError: false
-        }
     }
 
-    showHideError(value) {
-        this.setState({ showError: value });
+    showHideError() {
+        const error = document.querySelector('.authorization__form_error');
+        error.classList.toggle('display_none');
+            setTimeout(() => {
+                error.classList.toggle('display_none');
+            }, 6000);
     }
 
     onLogin(event) {
@@ -29,12 +30,8 @@ class AuthorizationForm extends React.Component {
         ) {
             this.authResult(true);
         } else {
-
             this.authResult(false);
-
-            this.showHideError(true);
-
-            console.log('показать страшную ошибку', this.state.showError);
+            this.showHideError();
         }
     }
 
@@ -60,12 +57,7 @@ class AuthorizationForm extends React.Component {
                         <input id="checkbox-remember" type="checkbox" className="checkbox checkbox_margins authorization__elem_margin_b" />
                         <label htmlFor="checkbox-remember" className="font-default text-block authorization__elem_margin_b authorization__elem_margin_l">Запомнить</label>
                         <label 
-                            className={"authorization__form_error" + 
-                            (this.state.showError === true ? 
-                                "" : // console.log(this.state.showError === true) :
-                                // setTimeout(() => "", 6000) :
-                                " display_none"
-                            )}
+                            className="authorization__form_error display_none"
                         >Не удаётся войти. Пожалуйста, проверьте правильность написания логина и пароля.</label>
                     </section>
                     <button 
