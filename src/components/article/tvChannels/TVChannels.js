@@ -23,15 +23,16 @@ class TVChannels extends React.Component {
 
     render() {    
         return (
-            <article className="tv-channels data__item">
+            // класс tv-channels используется для отступов последнего компонента tv-channels__item 
+            <article className="tv-channels">
                 <Scrollbar style={{ width: 1196, height: 696 }}>{
                     data.map((tvProgram, i) => {
                         return (
                             <section key={i} className="tv-channels__item tv-channels__item_margins tv-channels__item_padding background_gray">
                                 <section className="tv-channels__img-section">{this.addLogoTVCannel(tvProgram.img)}</section>
-                                <section className="tv-channels__text_paddings">
+                                <section>
                                     <label className="text-block tv-channels__title_paddings font_weight_medium font_size_s line-height_xs">{tvProgram.title}</label>
-                                    <section className="tv-channels__tv-program">{this.addProgram(tvProgram.program)}</section>
+                                    <section>{this.addProgram(tvProgram.program)}</section>
                                 </section>
                             </section>
                         )

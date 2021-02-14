@@ -2,10 +2,6 @@
     margin-top: 44px;
 }
 
-/* .body {
-    margin: 0;
-} */
-
 .text-block {
     display: block;
 }
@@ -16,9 +12,6 @@
 
 .display_none {
     display: none;
-}
-.display_block {
-    display: block;
 }
 .display_j-c_center {
     display: flex;

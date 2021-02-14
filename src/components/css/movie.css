@@ -27,13 +27,6 @@
 .movie__img_border-radius {
     border-radius: 8px;
 }
-/* .movie__img_margins {
-    margin-right: 20px;
-    margin-bottom: 16px;
-}
-.movie__img_margins_last-child {
-    margin-right: 0;
-} */
 
 .movie__title {
     width: 280px;

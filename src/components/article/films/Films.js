@@ -6,7 +6,7 @@ import '../../css/genres.css';
 class Films extends React.Component {
     render() {
         return (
-            <article className="films">
+            <article>
                 <section>
                     <section className="font_weight_medium font_size_m line-height_s">
                         <img src="images/emoji/fire.png" alt="" />
@@ -34,7 +34,7 @@ class Films extends React.Component {
                     <section className="font_weight_medium font_size_m line-height_s">
                         <label>Жанры</label>
                     </section>
-                    <section className="genres genres_margin_vert">
+                    <section className="genres genres_margins">
                         <div className="genres__item genres__item_background_1 cursor_pointer">
                             <img className="genres__img" src="images/emoji/comedy.png" alt="" />
                             <label className="genres__title font_size_s line-height_xs">Комедии</label>

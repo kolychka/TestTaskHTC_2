@@ -37,11 +37,11 @@ class Header extends React.Component {
         if (this.state.authStatus) {
             // suppressContentEditableWarning={true} прячет ошибку реакта (suppress that warning) при использовании contentEditable={true}
             return (
-                <section className="authorized-header">
+                <section>
                     <label 
                         contentEditable={true}
                         suppressContentEditableWarning={true} 
-                        className="header__username header__username_margin_r font_weight_medium cursor_pointer" 
+                        className="header__username_margin_r font_weight_medium cursor_pointer" 
                         onBlur={this.usernameOnBlurHandler}
                     >{this.addUsername()}</label>
                     <button 
@@ -52,7 +52,7 @@ class Header extends React.Component {
             )
         }
         return (
-            <section className="unauthorized-header">
+            <section>
                 <button 
                     className="font-default button-default button cursor_pointer"
                     onClick={(event) => this.onSignIn(event)}
@@ -65,7 +65,7 @@ class Header extends React.Component {
         return (
             <section className="display_j-c_center">
                 <section className="header-container">
-                    <header className="header header_size header_padding">
+                    <header className="header header_padding">
                         <section>
                             <img src="images/site-logotypes/logo.png" alt="Видеосервис" />
                         </section>

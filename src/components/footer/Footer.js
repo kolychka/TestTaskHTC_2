@@ -6,7 +6,7 @@ class Footer extends React.Component {
         return (
             <section className="footer-container footer-container_paddings footer-container_margin_t background_gray">
                 <section className="display_j-c_center">
-                    <footer className="footer footer_size footer_background footer_padding">
+                    <footer className="footer">
                         <img className="footer__img footer__img_margin_r" src="images/site-logotypes/htc-cs-logo.png" alt="Центр Высоких Технологий" />
                         <section>
                             <section className="footer_contact_margin">

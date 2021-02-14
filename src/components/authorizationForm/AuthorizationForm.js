@@ -20,7 +20,6 @@ class AuthorizationForm extends React.Component {
 
     onLogin(event) {
         event.preventDefault();
-        // const formError = document.querySelector('.authorization__form_error');
         const login = document.getElementById('login').value;
         const password = document.getElementById('password').value;
 
@@ -54,8 +53,8 @@ class AuthorizationForm extends React.Component {
                             <input id="login" type="text" className="font-default text-block authorization__input-login-password input_line-bottom authorization__elem_margin_b" placeholder="Логин" />
                             <input id="password" type="password" className="font-default text-block authorization__input-login-password input_line-bottom authorization__elem_margin_b" placeholder="Пароль" />
                         </label>
-                        <input id="checkbox-remember" type="checkbox" className="checkbox checkbox_margins authorization__elem_margin_b" />
-                        <label htmlFor="checkbox-remember" className="font-default text-block authorization__elem_margin_b authorization__elem_margin_l">Запомнить</label>
+                        <input id="checkbox-remember" type="checkbox" className="checkbox authorization__elem_margin_b" />
+                        <label htmlFor="checkbox-remember" className="font-default text-block authorization__elem_margin_b">Запомнить</label>
                         <label 
                             className="authorization__form_error display_none"
                         >Не удаётся войти. Пожалуйста, проверьте правильность написания логина и пароля.</label>

@@ -6,13 +6,11 @@
 .header {
     display: flex;
     justify-content: space-between;
+    width: 1180px;
+    height: 40px;
 }
 .header_padding {
     padding-top: 32px;
-}
-.header_size {
-    width: 1180px;
-    height: 40px;
 }
 
 .header__authorization-element {
@@ -37,8 +35,3 @@
 .search_color::-ms-input-placeholder { color: #828282; font-weight: 400; }
 .search_color::-ms-input-placeholder { color: #828282; font-weight: 400; }
 .search_color::placeholder { color: #828282; font-weight: 400; }
-
-.authorized-header {
-    height: inherit;
-    overflow: hidden;
-}
