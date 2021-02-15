@@ -1,0 +1,41 @@
+.tv-channels__item {
+    width: 1170px;
+    height: 162px;
+    border-radius: 8px;
+    display: flex;
+}
+
+.tv-channels__item_margins {
+    margin-bottom: 16px;
+    margin-right: 8px;
+}
+.tv-channels .tv-channels__item_margins:last-of-type {
+    margin-bottom: 0;
+}
+.tv-channels__item_padding {
+    padding: 7px 0;
+}
+
+.tv-channels__img-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: inherit;
+}
+
+.tv-channels__title_paddings {
+    padding: 17px 0;
+}
+
+.tv-channels__tv-program_margin_b {
+    margin-bottom: 12px;
+}
+
+.tv-channels__tv-program_margin_r {
+    margin-right: 16px;
+}
+
+.tv-channels__tv-program_title {
+    width: 694px;
+}

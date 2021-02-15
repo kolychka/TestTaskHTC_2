@@ -1,0 +1,34 @@
+.main__section_margin {
+    margin-top: 44px;
+}
+
+.text-block {
+    display: block;
+}
+
+.cursor_pointer {
+    cursor: pointer;
+}
+
+.display_none {
+    display: none;
+}
+.display_j-c_center {
+    display: flex;
+    justify-content: center;
+}
+
+.background_gray {
+    background: #F2F2F2;
+}
+
+.fade {
+    background: #333333;
+}
+
+.input_line-bottom {
+    outline: none;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #333333;
+}

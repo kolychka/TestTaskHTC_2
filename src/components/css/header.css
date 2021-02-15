@@ -1,0 +1,37 @@
+.header-container {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 1180px;
+    height: 40px;
+}
+.header_padding {
+    padding-top: 32px;
+}
+
+.header__authorization-element {
+    display: flex;
+    justify-content: right;
+}
+
+.header__username_margin_r {
+    margin-right: 10px;
+}
+
+.search {
+    width: 316px;
+    height: 25px;
+    font-weight: 500;
+}
+.search_margins {
+    margin-right: 26px;
+}
+.search_color::-moz-placeholder { color: #828282; font-weight: 400; }
+.search_color::-webkit-input-placeholder { color: #828282; font-weight: 400; }
+.search_color::-ms-input-placeholder { color: #828282; font-weight: 400; }
+.search_color::-ms-input-placeholder { color: #828282; font-weight: 400; }
+.search_color::placeholder { color: #828282; font-weight: 400; }

@@ -1,0 +1,8 @@
+.article {
+    display: grid; 
+    justify-content: center;
+}
+
+.article-content {
+    width: 1180px;
+}
