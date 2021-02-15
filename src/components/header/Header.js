@@ -26,10 +26,12 @@ class Header extends React.Component {
         return localStorage.getItem('username') ? localStorage.getItem('username') : 'Константин К.';
     }
 
-    usernameOnBlurHandler(event) { // сохраняем в local storage имя пользователя после изменения
-        const username = event.target.innerHTML;
-        if (username.replace(/(^[\s]+|[\s]+$)/g, '')) {
-            localStorage.setItem('username', username);
+    usernameOnBlurHandler(event) { // сохраняем в localStorage имя пользователя после изменения
+        const username = event.target.innerHTML; // Берёт значение со страницы.
+        let name = username.replaceAll('&nbsp;', ''); // Удаляет неразрывные пробелы, которые ставятся в начале и конце строки.
+        name = name.trim(); // Удаляет обычные пробелы в начале и конце строки.
+        if (name !== '') {
+            localStorage.setItem('username', name);
         }
     }
 
